@@ -1,0 +1,36 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "a",
+      "type": "double"
+    },
+    {
+      "name": "b",
+      "type": "double"
+    },
+    {
+      "name": "h",
+      "type": "double"
+    },
+    {
+      "name": "o",
+      "type": "double"
+    },
+    {
+      "name": "swc",
+      "type": "double"
+    },
+    {
+      "name": "gop",
+      "type": "integer"
+    },
+    {
+      "name": "g",
+      "type": "double"
+    }
+  ]
+}
