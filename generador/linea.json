@@ -1,0 +1,39 @@
+{
+  "fields": [
+
+    {
+      "name": "id",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "click",
+      "type": "integer"
+    },
+    {
+      "name": "viewer",
+      "type": "integer"
+    }
+
+  ],
+  "primary_key": [
+    {
+      "name": "id",
+      "type": "increments"
+    }
+  ],
+  "validations": [
+
+    {
+      "field": "id",
+      "rules": "required"
+    },
+    {
+      "field": "click",
+      "rules": "required"
+    },
+    {
+      "field": "viewer",
+      "rules": "required"
+    }
+  ]
+}

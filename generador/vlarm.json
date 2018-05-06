@@ -1,0 +1,25 @@
+{
+  "fields": [
+    {
+      "name": "t",
+      "type": "double"
+    },
+    {
+      "name": "q",
+      "type": "double"
+    },
+    {
+      "name": "id_hiperbolica",
+      "type": "double"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_hiperbolica",
+      "references": "id",
+      "on": "hiperbolica",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ]
+}

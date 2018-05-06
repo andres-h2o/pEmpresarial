@@ -1,0 +1,38 @@
+{
+  "fields": [
+    {
+      "name": "id_categoria",
+      "type": "integer#unsigned"
+    },
+    {
+      "name": "id_privilegio",
+      "type": "integer#unsigned"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_tipousuario",
+      "references": "id",
+      "on": "tipousuarios",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    },
+    {
+      "column": "id_pribilegio",
+      "references": "id",
+      "on": "privilegios",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "id_categoria",
+      "rules": "required"
+    },
+    {
+      "field": "id_privilegio",
+      "rules": "required"
+    }
+  ]
+}

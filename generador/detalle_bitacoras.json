@@ -1,0 +1,63 @@
+{
+  "fields": [
+    {
+      "name": "fecha",
+      "type": "timestamp"
+    },
+    {
+      "name": "accion",
+      "type": "varchar"
+    },
+    {
+      "name": "detalle",
+      "type": "timestamp"
+    }
+  ],
+  "foreign_keys": [
+    {
+      "column": "id_usuario",
+      "references": "id",
+      "on": "users",
+      "onDelete": "cascade",
+      "onUpdate": "cascade"
+    }
+  ],
+  "validations": [
+    {
+      "field": "fecha",
+      "rules": "required"
+    },
+    {
+      "field": "Mapellidopaterno",
+      "rules": "required"
+    },
+    {
+      "field": "Mapellidomaterno",
+      "rules": "required"
+    },
+    {
+      "field": "Mfechanacimiento",
+      "rules": "required"
+    },
+    {
+      "field": "Mfecharegistro",
+      "rules": "required"
+    },
+    {
+      "field": "Mestadocivil",
+      "rules": "required"
+    },
+    {
+      "field": "Mdireccion",
+      "rules": "required"
+    },
+    {
+      "field": "Mestado",
+      "rules": "required"
+    },
+    {
+      "field": "id_usuario",
+      "rules": "required"
+    }
+  ]
+}

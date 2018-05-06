@@ -1,0 +1,23 @@
+{
+  "fields": [
+    {
+      "name": "id_usuario",
+      "type": "int"
+    },
+    {
+      "name": "create_at",
+      "type": "timestamp"
+    },
+    {
+      "name": "create_at",
+      "type": "timestamp"
+    }
+  ],
+
+  "validations": [
+    {
+      "field": "id_usuario",
+      "rules": "required"
+    }
+  ]
+}

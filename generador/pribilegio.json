@@ -1,0 +1,22 @@
+{
+  "fields": [
+    {
+      "name": "cu",
+      "type": "text"
+    },
+    {
+      "name": "created_at",
+      "type": "timestamp"
+    },
+    {
+      "name": "updated_at",
+      "type": "timestamp"
+    }
+    ],
+  "validations": [
+    {
+      "field": "cu",
+      "rules": "required"
+    }
+  ]
+}

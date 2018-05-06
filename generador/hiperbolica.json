@@ -1,0 +1,24 @@
+{
+  "fields": [
+    {
+      "name": "nombre",
+      "type": "string"
+    },
+    {
+      "name": "qi",
+      "type": "double"
+    },
+    {
+      "name": "q",
+      "type": "double"
+    },
+    {
+      "name": "d",
+      "type": "double"
+    },
+    {
+      "name": "b",
+      "type": "double"
+    }
+  ]
+}
