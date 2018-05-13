@@ -125,19 +125,19 @@ class ExponecialController extends Controller
         return redirect('exponecial')->with('flash_message', 'Exponecial deleted!');
     }
 
-    public function cargar()
+    public function cargar($id_pozo)
     {
-        $lista = Exponecial::all();
-        return view('exponencial.cargar', compact('lista'));
+        return view('exponencial.cargar', compact('id_pozo'));
     }
 
-    public function nuevo(Request $request)
+    public function nuevo(Request $request,$id_pozo)
     {
         Exponecial::create([
             "nombre" => $request['nombre'],
             "qi" => $request['qi'],
             "q" => $request['q'],
             "d" => $request['d'],
+            "id_pozo" => $id_pozo,
         ]);
         $id_exponencial = Exponecial::select('id')->orderBy('id', 'desc')->get()->first()->id;
         $qi = $request['qi'];
@@ -171,7 +171,8 @@ class ExponecialController extends Controller
 
         $lista = Exponecial::all();
 
-        return view('exponencial.lista', compact('lista'));
+       return $this->lista($id_pozo);
+        //return view('exponencial.lista', compact('lista'));
     }
 
     public function graficar(Request $request)
@@ -228,8 +229,8 @@ class ExponecialController extends Controller
                 $lista = ValExop::where('id_exponencial', '=', $g1)->get();
                 $c = 0;
                 foreach ($lista as $item) {
-                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c)->get()->first();
-                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c)->get()->first();
+                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c-1)->get()->first();
+                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c-1)->get()->first();
                     $val1 = $aux->q;
                     if ($aux2 != '') {
                         $val2 = $aux2->q;
@@ -250,9 +251,9 @@ class ExponecialController extends Controller
                 $lista = ValExop::where('id_exponencial', '=', $g1)->get();
                 $c = 0;
                 foreach ($lista as $item) {
-                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c)->get()->first();
-                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c)->get()->first();
-                    $aux3 = ValExop::where('id_exponencial', '=', $g3)->where('t', '>', $c)->get()->first();
+                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c-1)->get()->first();
+                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c-1)->get()->first();
+                    $aux3 = ValExop::where('id_exponencial', '=', $g3)->where('t', '>', $c-1)->get()->first();
                     $val1 = $aux->q;
                     if ($aux2 != '') {
                         $val2 = $aux2->q;
@@ -280,10 +281,10 @@ class ExponecialController extends Controller
                 $lista = ValExop::where('id_exponencial', '=', $g1)->get();
                 $c = 0;
                 foreach ($lista as $item) {
-                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c)->get()->first();
-                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c)->get()->first();
-                    $aux3 = ValExop::where('id_exponencial', '=', $g3)->where('t', '>', $c)->get()->first();
-                    $aux4 = ValExop::where('id_exponencial', '=', $g4)->where('t', '>', $c)->get()->first();
+                    $aux = ValExop::where('id_exponencial', '=', $g1)->where('t', '>', $c-1)->get()->first();
+                    $aux2 = ValExop::where('id_exponencial', '=', $g2)->where('t', '>', $c-1)->get()->first();
+                    $aux3 = ValExop::where('id_exponencial', '=', $g3)->where('t', '>', $c-1)->get()->first();
+                    $aux4 = ValExop::where('id_exponencial', '=', $g4)->where('t', '>', $c-1)->get()->first();
                     $val1 = $aux->q;
                     if ($aux2 != '') {
                         $val2 = $aux2->q;
@@ -362,9 +363,9 @@ class ExponecialController extends Controller
 
     }
 
-    public function lista()
+    public function lista($id_pozo)
     {
-        $lista = Exponecial::all();
-        return view('exponencial.lista', compact('lista'));
+        $lista = Exponecial::where('id_pozo','=',$id_pozo)->get();
+        return view('exponencial.lista', compact('lista','id_pozo'));
     }
 }

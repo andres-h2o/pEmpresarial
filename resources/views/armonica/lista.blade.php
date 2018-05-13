@@ -6,7 +6,7 @@
     @include('alerts.success')
     <h1 id="cabeza">Curvas de Declinacion armonica Valores</h1>
     <div id="tbody">
-        <a href="{{ url('/armonica/cargar') }}" class="btn btn-success btn-sm" title="Add New Declinacion">
+        <a href="{{ url('/armonica/cargar/'.$id_pozo) }}" class="btn btn-success btn-sm" title="Add New Declinacion">
         <i class="fa fa-plus" aria-hidden="true"></i> Añadir nuevo Valor..
         </a>
 

@@ -62,7 +62,7 @@
                     <h2>{{$n4}}</h2>
                     <table id="_TABLA_R" border="1">
                         <tr>
-                            <th>Tiempo</th>
+                            <th>M</th>
                             <th style="text-align: center">q <br>(STB/d)</th>
                         </tr>
                         @foreach($lista4 as $item)

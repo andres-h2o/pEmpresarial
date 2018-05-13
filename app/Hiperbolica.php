@@ -25,7 +25,7 @@ class Hiperbolica extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'qi', 'q', 'd', 'b'];
+    protected $fillable = ['nombre', 'qi', 'q', 'd', 'b','id_pozo'];
 
     
 }

@@ -124,19 +124,19 @@ class ArmonicaController extends Controller
         return redirect('armonica')->with('flash_message', 'Armonica deleted!');
     }
 
-    public function cargar()
+    public function cargar($id_pozo)
     {
-        $lista = Armonica::all();
-        return view('armonica.cargar', compact('lista'));
+        return view('armonica.cargar', compact('id_pozo'));
     }
 
-    public function nuevo(Request $request)
+    public function nuevo(Request $request,$id_pozo)
     {
         Armonica::create([
             "nombre" => $request['nombre'],
             "qi" => $request['qi'],
             "q" => $request['q'],
             "d" => $request['d'],
+            "id_pozo" => $id_pozo,
         ]);
         $id_armonica = Armonica::select('id')->orderBy('id', 'desc')->get()->first()->id;
         $qi = $request['qi'];
@@ -168,9 +168,7 @@ class ArmonicaController extends Controller
             "id_armonicas" => $id_armonica,
         ]);
 
-        $lista = Armonica::all();
-
-        return view('armonica.lista', compact('lista'));
+        return $this->lista($id_pozo);
     }
 
     public function graficar(Request $request)
@@ -361,9 +359,9 @@ class ArmonicaController extends Controller
 
     }
 
-    public function lista()
+    public function lista($id_pozo)
     {
-        $lista = Armonica::all();
-        return view('armonica.lista', compact('lista'));
+        $lista = Armonica::where('id_pozo','=',$id_pozo)->get();
+        return view('armonica.lista', compact('lista','id_pozo'));
     }
 }

@@ -125,13 +125,12 @@ class HiperbolicaController extends Controller
         return redirect('hiperbolica')->with('flash_message', 'Hiperbolica deleted!');
     }
 
-    public function cargar()
+    public function cargar($id_pozo)
     {
-        $lista = Hiperbolica::all();
-        return view('hiperbolica.cargar', compact('lista'));
+        return view('hiperbolica.cargar', compact('id_pozo'));
     }
 
-    public function nuevo(Request $request)
+    public function nuevo(Request $request,$id_pozo)
     {
         Hiperbolica::create([
             "nombre" => $request['nombre'],
@@ -139,6 +138,7 @@ class HiperbolicaController extends Controller
             "q" => $request['q'],
             "d" => $request['d'],
             "b" => $request['b'],
+            "id_pozo" => $id_pozo,
         ]);
         $id_hiperbolica = Hiperbolica::select('id')->orderBy('id', 'desc')->get()->first()->id;
         $qi = $request['qi'];
@@ -170,9 +170,7 @@ class HiperbolicaController extends Controller
             "q" => $q,
             "id_hiperbolica" => $id_hiperbolica,
         ]);
-        $lista = Hiperbolica::all();
-
-        return view('hiperbolica.lista', compact('lista'));
+        return $this->lista($id_pozo);
     }
 
     public function graficar(Request $request)
@@ -368,9 +366,9 @@ class HiperbolicaController extends Controller
 
     }
 
-    public function lista()
+    public function lista($id_pozo)
     {
-        $lista = Hiperbolica::all();
-        return view('hiperbolica.lista', compact('lista'));
+        $lista = Hiperbolica::where('id_pozo','=',$id_pozo)->get();
+        return view('hiperbolica.lista', compact('lista','id_pozo'));
     }
 }

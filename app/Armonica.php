@@ -25,7 +25,7 @@ class Armonica extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'qi', 'q', 'd'];
+    protected $fillable = ['nombre', 'qi', 'q', 'd','id_pozo'];
 
     
 }

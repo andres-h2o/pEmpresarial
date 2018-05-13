@@ -1,0 +1,16 @@
+{
+  "fields": [
+    {
+      "name": "Pozo",
+      "type": "string"
+    },
+    {
+      "name": "x",
+      "type": "double"
+    },
+    {
+      "name": "y",
+      "type": "double"
+    }
+  ]
+}

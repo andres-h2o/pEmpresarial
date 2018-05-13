@@ -145,32 +145,37 @@
                         </li>
                         <!-- modulo curba de inclinacion  *-->
 
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-yelp fa-fw"></i> Curva de Declinacion<span
-                                        class="fa arrow"></span>
-                            </a>
-                            <ul class="nav nav-third-level">
-                                <li>
-                                    <a href="{{url('/exponencial')}}">
-                                        <i class="fa fa-plus"></i> Exponencial
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{url('/hiperbolica')}}">
-                                        <i class="fa fa-plus"></i> Hiperbolica
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="{{url('/armonica')}}">
-                                        <i class="fa fa-plus"></i> Armonica
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        {{--<li>--}}
+                            {{--<a href="#">--}}
+                                {{--<i class="fa fa-yelp fa-fw"></i> Curva de Declinacion<span--}}
+                                        {{--class="fa arrow"></span>--}}
+                            {{--</a>--}}
+                            {{--<ul class="nav nav-third-level">--}}
+                                {{--<li>--}}
+                                    {{--<a href="{{url('/exponencial')}}">--}}
+                                        {{--<i class="fa fa-plus"></i> Exponencial--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="{{url('/hiperbolica')}}">--}}
+                                        {{--<i class="fa fa-plus"></i> Hiperbolica--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                                {{--<li>--}}
+                                    {{--<a href="{{url('/armonica')}}">--}}
+                                        {{--<i class="fa fa-plus"></i> Armonica--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
                         <li>
                             <a href="{{url('/volumetrica/ver')}}">
                                 <i class="fa fa-yelp fa-fw"></i> Volumétrica
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{url('/pozo')}}">
+                                <i class="fa fa-yelp fa-fw"></i> Pozos
                             </a>
                         </li>
                     @endif

@@ -5,7 +5,7 @@
     <h1 id="cabeza">Curvas de Declinacion armonica</h1>
     <div id="temps_div"></div>
             <div class="row">
-             {!! Form::open(['route' => 'armonica.nuevo','method' => 'POST']) !!}
+             {!! Form::open(['route' => ['armonica.nuevo',$id_pozo],'method' => 'POST']) !!}
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>

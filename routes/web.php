@@ -112,22 +112,26 @@ Route::resource('declinacion', 'DeclinacionController');
 
 
 Route::get('exponencial', 'ExponecialController@lista');
-Route::get('exponencial/cargar', 'ExponecialController@cargar');
-Route::post('exponencial/nuevo', 'ExponecialController@nuevo')->name('exponencial.nuevo');
+Route::get('exponencial/cargar/{id_pozo}', 'ExponecialController@cargar');
+Route::post('exponencial/nuevo/{id_pozo}', 'ExponecialController@nuevo')->name('exponencial.nuevo');
 Route::post('exponencial/graficar', 'ExponecialController@graficar')->name('exponencial.graficar');
 
 
 Route::get('hiperbolica', 'HiperbolicaController@lista');
-Route::get('hiperbolica/cargar', 'HiperbolicaController@cargar');
-Route::post('hiperbolica/nuevo', 'HiperbolicaController@nuevo')->name('hiperbolica.nuevo');
+Route::get('hiperbolica/cargar/{id_pozo}', 'HiperbolicaController@cargar');
+Route::post('hiperbolica/nuevo/{id_pozo}', 'HiperbolicaController@nuevo')->name('hiperbolica.nuevo');
 Route::post('hiperbolica/graficar', 'HiperbolicaController@graficar')->name('hiperbolica.graficar');
 
 
 Route::get('armonica', 'ArmonicaController@lista');
-Route::get('armonica/cargar', 'ArmonicaController@cargar');
-Route::post('armonica/nuevo', 'ArmonicaController@nuevo')->name('armonica.nuevo');
+Route::get('armonica/cargar/{id_pozo}', 'ArmonicaController@cargar');
+Route::post('armonica/nuevo/{id_pozo}', 'ArmonicaController@nuevo')->name('armonica.nuevo');
 Route::post('armonica/graficar', 'ArmonicaController@graficar')->name('armonica.graficar');
 
 Route::resource('volumetrico', 'VolumetricoController');
 Route::get('volumetrica/ver', 'VolumetricoController@ver');
 Route::post('volumetrica/nueva', 'VolumetricoController@nueva')->name('volumetrico.nueva');
+Route::resource('pozo', 'PozoController');
+Route::get('exponencial/ver/{id_pozo}', 'ExponecialController@lista');
+Route::get('hiperbolica/ver/{id_pozo}', 'HiperbolicaController@lista');
+Route::get('armonica/ver/{id_pozo}', 'ArmonicaController@lista');

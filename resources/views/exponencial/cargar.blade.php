@@ -5,7 +5,7 @@
     <h1 id="cabeza">Curvas de Declinacion Exponencial</h1>
     <div id="temps_div"></div>
             <div class="row">
-             {!! Form::open(['route' => 'exponencial.nuevo','method' => 'POST']) !!}
+             {!! Form::open(['route' => ['exponencial.nuevo',$id_pozo],'method' => 'POST']) !!}
                 <div class="col-md-2">
                     <div class="form-group">
                         <label for="nombre">Nombre</label>

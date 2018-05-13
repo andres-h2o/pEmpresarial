@@ -4,14 +4,14 @@ namespace Practica;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Exponecial extends Model
+class Pozo extends Model
 {
     /**
      * The database table used by the model.
      *
      * @var string
      */
-    protected $table = 'exponecials';
+    protected $table = 'pozos';
 
     /**
     * The database primary key value.
@@ -25,7 +25,7 @@ class Exponecial extends Model
      *
      * @var array
      */
-    protected $fillable = ['nombre', 'qi', 'q', 'd','id_pozo'];
+    protected $fillable = ['Pozo', 'x', 'y'];
 
     
 }

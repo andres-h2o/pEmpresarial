@@ -7,7 +7,7 @@
     <body>
     <h1 id="cabeza">Curvas de Declinacion hiperbolica Valores</h1>
     <div id="tbody">
-        <a href="{{ url('/hiperbolica/cargar') }}" class="btn btn-success btn-sm" title="Add New Declinacion">
+        <a href="{{ url('/hiperbolica/cargar/'.$id_pozo) }}" class="btn btn-success btn-sm" title="Add New Declinacion">
         <i class="fa fa-plus" aria-hidden="true"></i> Añadir nuevo Valor..
         </a>
 

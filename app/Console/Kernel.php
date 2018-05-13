@@ -4,6 +4,9 @@ namespace Practica\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+use Illuminate\Support\Facades\Log;
+use Practica\Exponecial;
+use Practica\Hiperbolica;
 
 class Kernel extends ConsoleKernel
 {
@@ -24,6 +27,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        Log::info("user delete");
         // $schedule->command('inspire')
         //          ->hourly();
     }
